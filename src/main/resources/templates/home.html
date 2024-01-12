@@ -1,0 +1,41 @@
+
+<head th:replace="~{layoutBase :: head}">
+</head>
+
+<body>
+
+
+	<div th:replace="~{layoutBase :: navbar}"></div>
+
+	<div class="container mb-2">
+		<h1>Salas</h1>
+		<table class="table table-light">
+			<tr class="table-dark">
+				<th></th>
+				<th scope="col">Número Sala</th>
+				<th scope="col">Tipo</th>
+				<th scope="col">Capacidade</th>
+				<th scope="col">Piso</th>
+				<th scope="col"></th>
+			</tr>
+
+			<tr th:each="sala : ${salas}">
+				<th scope="row"></th>
+				<td><span th:text="${sala.numsala}"></span></td>
+				<td><span th:text="${sala.tipo}"></span></td>
+				<td><span th:text="${sala.capacidade}"></td>
+				<td><span th:text="${sala.piso}"></span></td>
+				<td class="buttons "><a th:href="@{form/{id}(id=${sala.id})}"
+					th:method="get" class="btn btn-warning"><i class="fa fa-pencil"></i></a>
+					<a th:href="@{delete/{id}(id=${sala.id})}" th:method="delete"
+					class="btn btn-danger"><i class="fa fa-trash"></i></a></td>
+			</tr>
+		</table>
+
+		<a href="/form"><button class="btn btn-dark">Adicionar</button></a> <a href="/find"><button class="btn btn-dark">Consultar
+				</button></a>
+
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+<div th:fragment="form">
+
+	<div class="form-group">
+		<label for="descricao" class="form-label">Descrição</label> <input
+			class="form-control" type="text" 
+			th:field="*{descricao}" id="descricao" 
+			placeholder="Nome da Disciplina">
+	</div>
+
+	<div class="form-group">
+		<label for="codcurso" class="form-label">Código</label> <input
+			th:field="*{codcurso}" type="text" class="form-control" id="codcurso"
+			required>
+	</div>
+
+	<div class="form-group">
+		<label for="periodo" class="form-label">Período</label>
+		<input th:field="*{periodo}" type="text" class="form-control"
+			id="periodo" required>
+	</div>
+</div>
+
+<div th:fragment="form-find">
+
+	<div class="form-group">
+		<label for="descricao" class="form-label">Descrição</label> <input
+			class="form-control" type="text" th:name="descricao" id="descricao"
+			placeholder="Nome da Disciplina">
+	</div>
+</div>

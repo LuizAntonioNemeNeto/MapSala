@@ -1,0 +1,43 @@
+
+<head th:replace="~{layoutBase :: head}">
+</head>
+
+<body>
+
+
+	<div th:replace="~{layoutBase :: navbar}"></div>
+
+	<div class="container mb-2">
+		<h1>Agendamentos</h1>
+		<table class="table table-light">
+			<tr class="table-dark">
+				<th></th>
+				<th scope="col">Data</th>
+				<th scope="col">Hora</th>
+				<th scope="col">Curso</th>
+				<th scope="col">Professor</th>
+				<th scope="col">Sala</th>
+				<th scope="col"></th>
+			</tr>
+
+			<tr th:each="agenda : ${agendas}">
+				<th scope="row"></th>
+				<td><span th:text="${agenda.dia}"></span></td>
+				<td><span th:text="${agenda.hora}"></span></td>
+				<td><span th:text="${agenda.curso.descricao}"></td>
+				<td><span th:text="${agenda.professor.nome}"></td>
+				<td><span th:text="${agenda.sala.numsala}"></td>
+				<td class="buttons "><a th:href="@{formAgenda/{idagenda}(idagenda=${agenda.idagenda})}"
+					th:method="get" class="btn btn-warning"><i class="fa fa-pencil"></i></a>
+					<a th:href="@{deleteAgenda/{idagenda}(idagenda=${agenda.idagenda})}" th:method="delete"
+					class="btn btn-danger"><i class="fa fa-trash"></i></a></td>
+			</tr>
+		</table>
+
+		<a href="/formAgenda"><button class="btn btn-dark">Adicionar</button></a> <a href="/findAgenda"><button class="btn btn-dark">Consultar
+				</button></a>
+
+	</div>
+</body>
+
+</html>

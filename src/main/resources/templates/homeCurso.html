@@ -1,0 +1,39 @@
+
+<head th:replace="~{layoutBase :: head}">
+</head>
+
+<body>
+
+
+	<div th:replace="~{layoutBase :: navbar}"></div>
+
+	<div class="container mb-2">
+		<h1>Cursos</h1>
+		<table class="table table-light">
+			<tr class="table-dark">
+				<th></th>
+				<th scope="col">Descrição</th>
+				<th scope="col">Código</th>
+				<th scope="col">Período</th>
+				<th scope="col"></th>
+			</tr>
+
+			<tr th:each="curso : ${cursos}">
+				<th scope="row"></th>
+				<td><span th:text="${curso.descricao}"></span></td>
+				<td><span th:text="${curso.codcurso}"></span></td>
+				<td><span th:text="${curso.periodo}"></td>
+				<td class="buttons "><a th:href="@{formCurso/{idcurso}(idcurso=${curso.idcurso})}"
+					th:method="get" class="btn btn-warning"><i class="fa fa-pencil"></i></a>
+					<a th:href="@{deleteCurso/{idcurso}(idcurso=${curso.idcurso})}" th:method="delete"
+					class="btn btn-danger"><i class="fa fa-trash"></i></a></td>
+			</tr>
+		</table>
+
+		<a href="/formCurso"><button class="btn btn-dark">Adicionar</button></a> <a href="/findCurso"><button class="btn btn-dark">Consultar
+				</button></a>
+
+	</div>
+</body>
+
+</html>

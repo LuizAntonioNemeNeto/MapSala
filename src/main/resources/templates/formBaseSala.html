@@ -1,0 +1,36 @@
+<div th:fragment="form">
+
+	<div class="form-group">
+		<label for="numsala" class="form-label">Numero Sala</label> <input
+			class="form-control" type="text" 
+			th:field="*{numsala}" id="numsala" 
+			placeholder="Número da Sala">
+	</div>
+
+	<div class="form-group">
+		<label for="tipo" class="form-label">Tipo</label> <input
+			th:field="*{tipo}" type="text" class="form-control" id="tipo"
+			required>
+	</div>
+
+	<div class="form-group">
+		<label for="capacidade" class="form-label">Capacidade</label>
+		<input th:field="*{capacidade}" type="text" class="form-control"
+			id="capacidade" required>
+	</div>
+	<div class="form-group">
+		<label for="piso" class="form-label">Piso</label> <input
+			th:field="*{piso}" type="text" class="form-control"
+			id="piso"  required>
+	</div>
+
+</div>
+
+<div th:fragment="form-find">
+
+	<div class="form-group">
+		<label for="numsala" class="form-label">Número Sala</label> <input
+			class="form-control" type="text" th:name="numsala" id="numsala"
+			placeholder="Número da Sala">
+	</div>
+</div>

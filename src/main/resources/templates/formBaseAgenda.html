@@ -1,0 +1,43 @@
+<div th:fragment="form">
+
+	<div class="form-group">
+		<label for="dia" class="form-label">Data</label> <input
+			class="form-control" type="date" 
+			th:field="*{dia}" id="dia" 
+			placeholder="Ex: xx/xx/xxxx">
+	</div>
+
+	<div class="form-group">
+		<label for="hora" class="form-label">Hora</label> <input
+			th:field="*{hora}" type="time" class="form-control" id="hora"
+			placeholder="Ex: xx:xx"
+			required>
+	</div>
+
+	<div class="form-group">
+		<label for="numsala" class="form-label">Sala</label>
+		<input th:field="*{sala.numsala}" type="text" class="form-control"
+			id="numsala" required>
+	</div>
+	
+		<div class="form-group">
+		<label for="descricao" class="form-label">Curso</label>
+		<input th:field="*{curso.descricao}" type="text" class="form-control"
+			id="descricao" required>
+	</div>
+	
+		<div class="form-group">
+		<label for="nome" class="form-label">Professor</label>
+		<input th:field="*{professor.nome}" type="text" class="form-control"
+			id="nome" required>
+	</div>
+</div>
+
+<div th:fragment="form-find">
+
+	<div class="form-group">
+		<label for="dia" class="form-label">Data</label> <input
+			class="form-control" type="date" th:name="dia" id="dia"
+			placeholder="Ex: xx/xx/xxxx">
+	</div>
+</div>
